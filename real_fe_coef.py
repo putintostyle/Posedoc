@@ -22,7 +22,7 @@ dt_0 = dt*10
 print(abs(1+mu*dt_0)) # our of stablility region
 def findCoef(input, timestep):
     forwDiff = (input[1:-1]-input[0:-2])/timestep
-    return np.inner(forwDiff, input[1:-1])/np.sum(input[1:-1]**2)
+    return np.inner(forwDiff, input[1:-1])/np.sum(input[0:-2]**2)
 aprxmu = findCoef(exactSol, dt_0)
 print(aprxmu)
 # plot exact
